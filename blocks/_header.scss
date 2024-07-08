@@ -1,0 +1,145 @@
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding-bottom: 70px;
+
+    min-height: 90vh;
+    background: 
+        linear-gradient(
+            180deg, 
+            var(--backgroundColor) 11.98%, 
+            rgba(45, 52, 60, 0.38) 51.04%, 
+            var(--backgroundColor) 92.19%), 
+        url("./../img/interiors/office.jpg");
+
+
+    @include mediaLaptop {
+        min-height: unset;
+        row-gap: 15px;
+    }
+}
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+
+    .nav-list {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 40px;
+    }
+
+    .icon {
+        display: none;
+
+        @include mediaLaptop{
+            display: block;
+            font-size: 23px;
+            position: absolute;
+            right: 25px;
+        }
+    }
+}
+
+.title {
+    position: relative;
+    padding-bottom: 80px;
+
+    text-align: center;
+    font-size: 32px;
+    color: var(--accentColor);
+    font-weight: 700;
+
+    h1 {
+        padding-bottom: 30px;
+    }
+
+    .mouse-icon {
+        position: absolute;
+        padding-bottom: 20px;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 0%);
+    }
+}
+
+.foot {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+
+    .info {
+        position: relative;
+        font-size: 18px;
+
+        &--map, &--phone {
+            padding-left: 30px;
+
+            &::before{
+                content: "";
+
+                position: absolute;
+                left: 0px;
+                top: 50%;
+                width: 21px;
+                height: 21px;
+                transform: translate(0%, -50%);
+
+                background-repeat: no-repeat;
+            }
+        }
+
+        &--map::before {
+            background-image: url(./../img/svg/map.svg);
+        }
+
+        &--phone::before {
+            background-image: url(./../img/svg/phone.svg);
+        }
+    }
+}
+
+@include mediaLaptop{
+    header{
+        position: relative;
+    }
+
+    .navigation-list{
+        display: none;
+        position: absolute;
+        top: 175px;
+        left: 50%;
+        width: 100vw;
+        height: 100vh;
+        padding: 60px;
+        z-index: 9;
+        background-color: var(--backgroundColor);
+        transform: translateX(-50%);
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .title {
+        font-size: 28px;
+        padding-bottom: 100px;
+    }
+
+    .foot {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 30px;
+    }
+
+    .info {
+        font-size: 14px;
+    }
+}

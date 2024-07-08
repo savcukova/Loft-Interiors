@@ -1,0 +1,39 @@
+.form {
+    padding: 140px 20px;
+    background: linear-gradient(
+        180deg,
+        var(--backgroundColor) 10.42%,
+        rgba(var(--backgroundColor) 0) 50.52%,
+        var(--backgroundColor) 90.1%
+    ), 
+    linear-gradient(0deg, rgba(var(--backgroundColor), 0.9), rgba(var(--backgroundColor), 0.9)),
+    url("./../img/living-room.jpg"), #c4c4c4;
+
+    .form-title {
+        margin-bottom: 18px;
+    }
+}
+
+.form-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+
+    @include mediaLaptop{
+        grid-template-columns: 1fr;
+    }
+
+    .form-text {
+        line-height: 1.5;
+    }
+
+    .form-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 35px 30px;
+
+        @include mediaLaptop{
+            grid-template-columns: 1fr;
+        }
+    }
+}

@@ -1,0 +1,52 @@
+.video {
+    position: relative;
+    text-align: center;
+    margin-bottom: 80px;
+
+    &::after {
+        content: "IV";
+        top: 30%;
+        right: -50px;
+
+        @include decorNumber;
+    }
+
+    .video-link {
+        position: relative;
+        display: inline-block;
+        text-align: center;
+
+        &::before {
+            content: "";
+
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            background: rgba($backgroundColorDark, 0.8);
+            transition: all 0.4s ease-in;
+        }
+
+        &:hover::before {
+            background: rgba($backgroundColorDark, 0.5);
+        }
+
+        .video-icon {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.4s ease-in;
+        }
+
+        .video-img {
+            max-width: 65%;
+        }
+    }
+}
+
+.video-link:hover .video-icon{
+    transform: translate(-50%, -50%) scale(1.2);
+    filter: saturate(1.5);
+}

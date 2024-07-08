@@ -1,0 +1,42 @@
+.benefits {
+    position: relative;
+    padding: 120px 0;
+
+    &::after {
+        content: "II";
+        right: -50px;
+
+        @include decorNumber;
+    }
+
+    .benefits-row {
+        display: flex;
+        column-gap: 40px;
+        justify-content: space-between;
+        align-items: center;
+
+        @include mediaLaptop{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 30px;
+        }
+
+        .benefits-item {
+            text-align: center;
+
+            img {
+                transition: all 0.3s ease-in-out;
+                width: 55px;
+            
+                &:hover {
+                width: 70px;
+                }
+            }
+
+            .benefits-text {
+                line-height: 1.35;
+                font-weight: 300;
+            }
+        }
+    }
+}
