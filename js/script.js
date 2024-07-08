@@ -46,16 +46,19 @@ scroll.addEventListener("click", () => {
 const formular = document.querySelector(".form-form");
 const alertMessage = document.querySelector(".password-alert");
 
-formular.addEventListener("submit", (event) => {
-    event.preventDefault()
-
+const checkPasswords = () => {
     const password1 = document.getElementById("password1").value;
     const password2 = document.getElementById("password2").value;
+    alertMessage.style.display = (password1 !== password2) ? "block" : "none";
+};
 
-    if (password1 !== password2){
+formular.addEventListener("input", checkPasswords);
+
+formular.addEventListener("submit", (event) => {
+    const password1 = document.getElementById("password1").value;
+    const password2 = document.getElementById("password2").value;
+    if (password1 !== password2) {
+        event.preventDefault();
         alertMessage.style.display = "block";
-    } else {
-        alertMessage.style.display = "none";
-        formular.submit();
     }
-})
+});
